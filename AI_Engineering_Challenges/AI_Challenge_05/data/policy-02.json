@@ -1,0 +1,68 @@
+{
+  "policy_number": "POL-2024-VN-99421",
+  "policyholder": {
+    "name": "Global Retail Group",
+    "type": "CORPORATE",
+    "industry": "Retail",
+    "employee_count": 1200
+  },
+  "plan": {
+    "name": "SME Basic Coverage",
+    "tier": "Silver",
+    "effective_date": "2024-04-01",
+    "expiry_date": "2025-03-31",
+    "currency": "VND"
+  },
+  "members": {
+    "total": 1200,
+    "employee": 1200,
+    "dependent_spouse": 0,
+    "dependent_child": 0
+  },
+  "benefits": [
+    {
+      "type": "INPATIENT",
+      "annual_limit": 500000000,
+      "waiting_period_days": 30,
+      "sub_benefits": [
+        { "name": "Room & Board", "limit_per_day": 1000000, "max_days": 60 },
+        { "name": "ICU", "limit_per_day": 3000000, "max_days": 15 },
+        { "name": "Surgery", "limit_per_event": 100000000 }
+      ]
+    },
+    {
+      "type": "OUTPATIENT",
+      "annual_limit": 20000000,
+      "sub_benefits": [
+        { "name": "General Practitioner", "limit_per_visit": 500000, "visits_per_year": 20 },
+        { "name": "Specialist Visit", "limit_per_visit": 1000000, "visits_per_year": 10 },
+        { "name": "Diagnostic Tests", "limit_per_year": 5000000 }
+      ]
+    },
+    {
+      "type": "VISION",
+      "annual_limit": 5000000,
+      "waiting_period_days": 180,
+      "sub_benefits": [
+        { "name": "Eye Exam", "limit_per_year": 1000000 },
+        { "name": "Frames and Lenses", "limit_per_year": 4000000 }
+      ]
+    }
+  ],
+  "exclusions": [
+    "Any treatment related to HIV/AIDS",
+    "Routine physical examinations",
+    "Alternative medicines (Acupuncture, Chiropractic)",
+    "Mental health and psychiatric treatment"
+  ],
+  "copay": {
+    "outpatient": { "percentage": 10, "max_per_visit": 100000 },
+    "inpatient": { "percentage": 10 },
+    "vision": { "percentage": 50 }
+  },
+  "network": {
+    "type": "HMO",
+    "hospital_count": 120,
+    "countries": ["Vietnam"]
+  }
+}
