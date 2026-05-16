@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { glossaryData } from '@/data/glossary';
 import Highlight from '@/components/Highlight';
 import TermModal from '@/components/TermModal';
@@ -10,9 +10,20 @@ const CATEGORIES = [...new Set(glossaryData.map(t => t.category))];
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedTerm, setSelectedTerm] = useState(null);
   const scrollAreaRef = useRef(null);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 300);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchQuery]);
 
   // Filter logic
   const filteredData = useMemo(() => {
@@ -24,8 +35,8 @@ export default function Home() {
     }
 
     // Filter by Search
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
+    if (debouncedSearchQuery.trim()) {
+      const q = debouncedSearchQuery.toLowerCase();
       result = result.filter(t => 
         t.term.toLowerCase().includes(q) || 
         t.definition.toLowerCase().includes(q)
@@ -47,7 +58,7 @@ export default function Home() {
     });
 
     return grouped;
-  }, [searchQuery, activeCategory]);
+  }, [debouncedSearchQuery, activeCategory]);
 
   // Keep track of collapsed categories
   const [collapsedCategories, setCollapsedCategories] = useState({});
@@ -154,7 +165,7 @@ export default function Home() {
           {Object.keys(filteredData).length === 0 ? (
             <div className="empty-state">
               <h3>No terms found</h3>
-              <p>We couldn't find anything matching "{searchQuery}"</p>
+              <p>We couldn't find anything matching "{debouncedSearchQuery}"</p>
             </div>
           ) : (
             Object.entries(filteredData).map(([category, terms]) => {
@@ -178,10 +189,10 @@ export default function Home() {
                           onClick={() => setSelectedTerm(termData)}
                         >
                           <h3 className="term-card-title">
-                            <Highlight text={termData.term} highlight={searchQuery} />
+                            <Highlight text={termData.term} highlight={debouncedSearchQuery} />
                           </h3>
                           <p className="term-card-def">
-                            <Highlight text={termData.definition} highlight={searchQuery} />
+                            <Highlight text={termData.definition} highlight={debouncedSearchQuery} />
                           </p>
                         </div>
                       ))}
