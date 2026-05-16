@@ -26,6 +26,18 @@ A full-stack suite of premium HTML email templates and a web application to prev
 - **Tech Stack**: Next.js (App Router), React, CSS, HTML.
 - **Highlights**: Features 6 meticulously designed email templates for the entire claims lifecycle. The Next.js web application allows operations teams to dynamically preview the templates with real-time variable interpolation across simulated mobile and desktop viewports.
 
+### [Challenge 04: Insurance Glossary Search App](./AI_Engineering_Challenges/AI_Challenge_04)
+A high-performance, offline-first client-side web application for searching insurance terminology.
+- **Tech Stack**: Next.js (App Router), React, Vanilla CSS.
+- **Highlights**: Features instant text-search filtering, an A-Z quick-jump sidebar with expandable categories, and cross-linked term modals—all rendering lightning fast without server dependency after initial load.
+
+### [Challenge 05: Policy Summary Generator](./AI_Engineering_Challenges/AI_Challenge_05)
+A dynamic application that converts complex nested insurance policy JSON data into a beautifully formatted, print-ready document.
+- **Tech Stack**: Next.js (App Router), React, CSS `@media print`.
+- **Highlights**: Features a robust UI that intelligently scales to handle entirely different policy schemas (varying sub-benefits, currencies, and limits). Designed to produce pixel-perfect A4 PDFs natively via the browser's print function without heavy backend libraries.
+
+### [Logical Questions](./Logical_questions)
+Answers to the cognitive and scenario-based logical reasoning questions.
+
 ## How to Run
-Each challenge contains its own specific instructions and requirements. Please navigate to the individual challenge directories to view their respective `README.md` files for detailed setup and execution instructions.
-# papaya_ins
+Each challenge contains its own specific instructions and requirements. Please navigate to the individual challenge directories to view their respective `README.md` files (or launch their dev servers) for detailed setup and execution instructions.
