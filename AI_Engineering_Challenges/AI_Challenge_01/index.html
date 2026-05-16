@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Plan Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="page-header">
+            <h1>Choose Your Protection</h1>
+            <p>Compare our comprehensive insurance plans to find the perfect coverage for you and your family.</p>
+        </header>
+
+        <div class="comparison-container">
+            <div class="pricing-grid">
+                <!-- Labels Column (Desktop Only) -->
+                <div class="grid-column labels-column">
+                    <div class="cell header-cell empty-cell"></div>
+                    <div class="cell row-label">Monthly Premium</div>
+                    <div class="cell row-label">Annual Limit</div>
+                    <div class="cell row-label">Outpatient</div>
+                    <div class="cell row-label">Inpatient</div>
+                    <div class="cell row-label">Dental</div>
+                    <div class="cell row-label">Maternity</div>
+                    <div class="cell row-label">Copay</div>
+                    <div class="cell row-label">Waiting Period</div>
+                    <div class="cell row-label highlights-label">Highlights</div>
+                </div>
+
+                <!-- Bronze Plan -->
+                <div class="grid-column plan-column">
+                    <div class="cell header-cell">
+                        <div class="plan-badge bronze-badge">Bronze</div>
+                        <h2 class="plan-name">Starter</h2>
+                        <div class="price-container">
+                            <span class="currency">$</span><span class="amount">150</span><span class="period">/mo</span>
+                        </div>
+                        <button class="select-btn">Select Bronze</button>
+                    </div>
+                    
+                    <div class="cell feature-cell" data-label="Monthly Premium">
+                        <span class="value highlight-value" title="Lowest Premium">$150</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Annual Limit">
+                        <span class="value">$500,000</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Outpatient">
+                        <span class="value">$3,000 <span class="unit">/ visit</span></span>
+                        <span class="sub-value">30 visits / yr</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Inpatient">
+                        <span class="value">$10,000 <span class="unit">/ day</span></span>
+                        <span class="sub-value">60 days / yr</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Dental">
+                        <span class="not-included">
+                            <svg class="icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" /></svg>
+                            Not included
+                        </span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Maternity">
+                        <span class="not-included">
+                            <svg class="icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" /></svg>
+                            Not included
+                        </span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Copay">
+                        <span class="value">20%</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Waiting Period">
+                        <span class="value">30 days</span>
+                    </div>
+                    <div class="cell feature-cell highlights-cell" data-label="Highlights">
+                        <ul class="highlight-list">
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> Basic coverage</li>
+                            <li><svg class="icon cross" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg> No dental or maternity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Silver Plan (Recommended) -->
+                <div class="grid-column plan-column recommended-plan">
+                    <div class="cell header-cell recommended-header">
+                        <div class="recommended-badge">Recommended</div>
+                        <div class="plan-badge silver-badge">Silver</div>
+                        <h2 class="plan-name">Balanced</h2>
+                        <div class="price-container">
+                            <span class="currency">$</span><span class="amount">350</span><span class="period">/mo</span>
+                        </div>
+                        <button class="select-btn primary">Select Silver</button>
+                    </div>
+                    
+                    <div class="cell feature-cell" data-label="Monthly Premium">
+                        <span class="value">$350</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Annual Limit">
+                        <span class="value">$1,500,000</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Outpatient">
+                        <span class="value">$5,000 <span class="unit">/ visit</span></span>
+                        <span class="sub-value">60 visits / yr</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Inpatient">
+                        <span class="value">$25,000 <span class="unit">/ day</span></span>
+                        <span class="sub-value">120 days / yr</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Dental">
+                        <span class="value">$30,000 <span class="unit">/ yr</span></span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Maternity">
+                        <span class="not-included">
+                            <svg class="icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" /></svg>
+                            Not included
+                        </span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Copay">
+                        <span class="value">10%</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Waiting Period">
+                        <span class="value">15 days</span>
+                    </div>
+                    <div class="cell feature-cell highlights-cell" data-label="Highlights">
+                        <ul class="highlight-list">
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> Includes dental</li>
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> Lower copay</li>
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> Higher limits</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Gold Plan -->
+                <div class="grid-column plan-column">
+                    <div class="cell header-cell">
+                        <div class="plan-badge gold-badge">Gold</div>
+                        <h2 class="plan-name">Premium</h2>
+                        <div class="price-container">
+                            <span class="currency">$</span><span class="amount">700</span><span class="period">/mo</span>
+                        </div>
+                        <button class="select-btn">Select Gold</button>
+                    </div>
+                    
+                    <div class="cell feature-cell" data-label="Monthly Premium">
+                        <span class="value">$700</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Annual Limit">
+                        <span class="value highlight-value" title="Highest Limit">$5,000,000</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Outpatient">
+                        <span class="value highlight-value" title="Highest Limit">$10,000 <span class="unit">/ visit</span></span>
+                        <span class="sub-value highlight-value">Unlimited visits</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Inpatient">
+                        <span class="value highlight-value" title="Highest Limit">$50,000 <span class="unit">/ day</span></span>
+                        <span class="sub-value highlight-value">Unlimited days</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Dental">
+                        <span class="value highlight-value" title="Highest Limit">$100,000 <span class="unit">/ yr</span></span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Maternity">
+                        <span class="value highlight-value" title="Highest Limit">$200,000 <span class="unit">/ preg</span></span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Copay">
+                        <span class="value highlight-value" title="Best Copay">0%</span>
+                    </div>
+                    <div class="cell feature-cell" data-label="Waiting Period">
+                        <span class="value highlight-value" title="Best Waiting Period">0 days</span>
+                    </div>
+                    <div class="cell feature-cell highlights-cell" data-label="Highlights">
+                        <ul class="highlight-list">
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> Full coverage</li>
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> No copay</li>
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> No waiting period</li>
+                            <li><svg class="icon check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> Unlimited visits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

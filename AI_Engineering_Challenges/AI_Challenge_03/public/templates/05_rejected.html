@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Update</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f4f4f5;">
+    <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; margin-top: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+        <div style="background-color: #2563EB; padding: 24px; text-align: center;">
+            <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.5px;">Papaya Insurance</h1>
+        </div>
+        <div style="padding: 32px; color: #374151; line-height: 1.6; font-size: 16px;">
+            <p style="margin-top: 0;">Hi {{member_name}},</p>
+            <p>We're writing to provide an update on your recent claim (<strong>{{claim_number}}</strong>).</p>
+            <p>After a careful review of your submitted documents and your active policy, we are unfortunately unable to approve this claim.</p>
+            
+            <div style="background-color: #fef2f2; border-left: 4px solid #EF4444; padding: 16px; margin: 24px 0;">
+                <h3 style="margin: 0 0 8px 0; color: #991b1b; font-size: 16px;">Reason for Decision</h3>
+                <p style="margin: 0; color: #7f1d1d;">{{rejection_reason}}</p>
+            </div>
+            
+            <h3 style="color: #1e293b; font-size: 18px; margin-top: 32px;">Next Steps</h3>
+            <p>We understand this might be disappointing news. If you believe this decision was made in error or if you have new, supporting documents that weren't originally provided, you have the right to appeal.</p>
+            <p>To start an appeal, please reply to this email or contact our support team before <strong>{{appeal_deadline}}</strong>.</p>
+            
+            <p style="margin-bottom: 0;">Best regards,<br>The Papaya Insurance Team</p>
+        </div>
+        <div style="background-color: #f8fafc; padding: 24px; text-align: center; border-top: 1px solid #e2e8f0;">
+            <p style="margin: 0; color: #64748b; font-size: 14px;">Need help? Contact our team at <br/> <a href="mailto:support@papayainsurance.com" style="color: #2563EB; text-decoration: none;">support@papayainsurance.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
