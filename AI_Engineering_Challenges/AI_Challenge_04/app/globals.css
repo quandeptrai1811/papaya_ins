@@ -31,6 +31,10 @@ body {
   display: flex;
   height: 100vh;
   overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.05);
+  background-color: var(--bg-card);
 }
 
 /* Sidebar Styling */
@@ -45,7 +49,11 @@ body {
 }
 
 .sidebar-header {
-  padding: 24px;
+  height: 85px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-bottom: 1px solid var(--border);
 }
 
@@ -156,7 +164,10 @@ body {
 }
 
 .search-header {
-  padding: 24px 40px;
+  height: 85px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
   background-color: var(--bg-card);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
@@ -166,6 +177,7 @@ body {
 .search-input-wrapper {
   position: relative;
   max-width: 600px;
+  width: 100%;
 }
 
 .search-icon {
@@ -256,30 +268,35 @@ body {
 .term-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 12px;
+  padding: 24px;
   cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .term-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(37,99,235,0.08);
   border-color: var(--primary-light);
 }
 
 .term-card-title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+.term-card:hover .term-card-title {
   color: var(--primary);
-  margin-bottom: 8px;
 }
 
 .term-card-def {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -290,9 +307,26 @@ body {
 mark {
   background-color: var(--highlight-bg);
   color: var(--highlight-text);
-  border-radius: 2px;
-  padding: 0 2px;
-  font-weight: 500;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-weight: 600;
+}
+
+/* Search Shortcut Badge */
+.search-shortcut {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  pointer-events: none;
 }
 
 /* Modal */
@@ -302,14 +336,15 @@ mark {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(4px);
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 50;
   animation: fadeIn 0.2s ease-out;
 }
+
 
 .modal-content {
   background-color: var(--bg-card);

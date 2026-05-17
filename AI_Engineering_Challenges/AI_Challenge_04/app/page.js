@@ -90,6 +90,19 @@ export default function Home() {
     }, 50);
   };
 
+  const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="app-container">
       
@@ -152,12 +165,14 @@ export default function Home() {
           <div className="search-input-wrapper">
             <span className="search-icon">🔍</span>
             <input 
+              ref={searchInputRef}
               type="text" 
               className="search-input"
               placeholder="Search terms or definitions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
+            <span className="search-shortcut">⌘K</span>
           </div>
         </header>
 

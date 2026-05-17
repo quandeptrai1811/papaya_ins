@@ -1,3 +1,4 @@
+import { X } from 'lucide-react';
 import Highlight from './Highlight';
 
 export default function TermModal({ termData, allTerms, onClose, onSelectRelated }) {
@@ -11,7 +12,9 @@ export default function TermModal({ termData, allTerms, onClose, onSelectRelated
             <h2>{termData.term}</h2>
             <span className="modal-category">{termData.category}</span>
           </div>
-          <button className="modal-close" onClick={onClose}>×</button>
+          <button className="modal-close" onClick={onClose}>
+            <X size={20} />
+          </button>
         </div>
         
         <div className="modal-body">
