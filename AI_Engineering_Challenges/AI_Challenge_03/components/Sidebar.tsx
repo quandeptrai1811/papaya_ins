@@ -1,4 +1,15 @@
-export default function Sidebar({ templates, currentTemplateId, onSelectTemplate }) {
+interface Template {
+  name: string;
+  [key: string]: any;
+}
+
+interface SidebarProps {
+  templates: Record<string, Template>;
+  currentTemplateId: string;
+  onSelectTemplate: (id: string) => void;
+}
+
+export default function Sidebar({ templates, currentTemplateId, onSelectTemplate }: SidebarProps) {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">

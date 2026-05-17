@@ -1,4 +1,9 @@
-export default function EditorPanel({ vars, onVarChange }) {
+interface EditorPanelProps {
+  vars: Record<string, string>;
+  onVarChange: (key: string, value: string) => void;
+}
+
+export default function EditorPanel({ vars, onVarChange }: EditorPanelProps) {
   return (
     <section className="editor-panel">
       <div className="panel-header">
