@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Papaya Insurance Claims Analytics Dashboard
 
-## Getting Started
+This is a highly interactive, responsive, and type-safe **Next.js & TypeScript** application built for AI Engineering Challenge 09. It serves as a comprehensive dashboard for underwriters and claim managers to analyze and visualize a mock dataset of 5,000 insurance claims.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Key Features
+
+1. **Granular KPI Summaries**:
+   - Live aggregation of Total Claims, overall Approval Rate, Average Processing Time (days), and Total Approved Payout (THB).
+2. **Interactive Visualizations (Recharts)**:
+   - **Status Distribution (Donut Chart)**: Fast insight into Approved, Rejected, Under Review, and Pending percentages.
+   - **Timeline Trends (Line Chart)**: Dynamic timeline plotting with a toggle to aggregate by either Week or Month.
+   - **Top 10 Diagnoses by Frequency & Cost (Bar Charts)**: Horizontal bar charts highlighting hotspots. *Clicking any bar instantly filters the claim list below (interactive drill-down!)*.
+   - **Insurer Performance (Grouped Bar Chart)**: Compares approval ratios across multiple insurance providers.
+   - **Processing Time Distribution (Histogram)**: Displays claim processing duration frequencies.
+3. **Multidimensional Filters**:
+   - Instant client-side filtering by date range, claim type, insurer, country, and claim status.
+4. **Sortable & Paginated Claims Grid**:
+   - Displays all claims with full pagination, multi-column sorting (amount, date, status, etc.), and a **CSV Export** button.
+5. **High Fidelity Skewed Dataset**:
+   - Uses a pre-generated log-normal cost distribution (5,000 claims) designed via a custom generator script. This matches real-world insurance claim data (dense clustering of small outpatient claims with a long tail of expensive inpatient hospitalization claims).
+
+---
+
+## 🛠️ Technology Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Visualizations**: Recharts
+- **Styling**: Vanilla CSS (globals.css) with CSS variables, a sleek modern Dark theme, glassmorphism card panels, and responsive grid layouts.
+- **Typography**: Google Fonts (Outfit)
+
+---
+
+## 📂 Project Structure
+
+```
+AI_Challenge_09/
+  app/
+    layout.tsx      ← Outfit font, metadata, viewport settings
+    page.tsx        ← Dashboard layout, state orchestration, and page wrapper
+    globals.css     ← Design system, dark mode CSS variables, interactive hovers
+  components/
+    FilterBar.tsx   ← Datepicker and multi-select filter controls
+    KpiCards.tsx    ← Summarized metric card panel
+    StatusDonut.tsx ← Recharts Pie/Donut claim status distribution
+    ClaimsOverTime.tsx ← Recharts Line claims trend over time with aggregation toggle
+    DiagFreqBar.tsx ← Recharts horizontal diagnosis frequency bar chart (with drill-down)
+    DiagCostBar.tsx ← Recharts horizontal diagnosis total cost bar chart (with drill-down)
+    ProcessingHist.tsx ← Recharts claims processing duration frequency distribution
+    InsurerBar.tsx  ← Recharts insurer approval rate comparison
+    ClaimsTable.tsx ← Paginated table grid with column headers sorting and CSV exporter
+  lib/
+    computeKpis.ts  ← Pure functions for calculating KPI numbers
+    filterData.ts   ← Helper for filtering claim arrays
+  public/
+    claims.json     ← Statically bundled 5,000-claim log-normal dataset
+  scripts/
+    generate-data.mjs ← Node.js dataset generation script
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Install Dependencies
+```bash
+npm install
+```
 
-## Learn More
+### 2. Start the Development Server
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Build & Run Production Bundle
+```bash
+npm run build
+npm run start
+```
+Open [http://localhost:3000](http://localhost:3000) in your web browser to interact with the dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📈 Skewed Dataset Engine
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project includes an optimized dataset generator in `scripts/generate-data.mjs` that produces a log-normal cost curve, ensuring realistic claim simulations:
+- Mostly cheap, frequent outpatient visits (500 to 2,000 THB).
+- Rare, highly expensive inpatient surgeries (up to 300,000 THB).
+- Randomly distributed processing times (0 to 14 days) and status metrics.
