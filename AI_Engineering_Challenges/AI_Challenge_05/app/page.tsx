@@ -163,7 +163,7 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody>
-                  {Object.entries(p.copay).map(([key, val]) => (
+                  {Object.entries(p.copay).map(([key, val]: [string, any]) => (
                     <tr key={key}>
                       <td style={{textTransform: 'capitalize'}}>{key}</td>
                       <td className="amount">
