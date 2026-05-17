@@ -1,9 +1,31 @@
 'use client';
-export default function FilterBar({ filters, onChange, claims }) {
-  const set = (key, val) => onChange({ ...filters, [key]: val });
+
+interface Filters {
+  dateFrom: string;
+  dateTo: string;
+  claimType: string;
+  insurer: string;
+  country: string;
+  status: string;
+}
+
+interface Claim {
+  insurer: string;
+  country: string;
+  [key: string]: any;
+}
+
+interface FilterBarProps {
+  filters: Filters;
+  onChange: (f: Filters) => void;
+  claims: Claim[];
+}
+
+export default function FilterBar({ filters, onChange, claims }: FilterBarProps) {
+  const set = (key: keyof Filters, val: string) => onChange({ ...filters, [key]: val });
   const claimTypes = ['', 'OUTPATIENT', 'INPATIENT', 'DENTAL', 'MATERNITY'];
-  const insurers = ['', ...new Set(claims.map(c => c.insurer))];
-  const countries = ['', ...new Set(claims.map(c => c.country))];
+  const insurers: string[] = ['', ...Array.from(new Set(claims.map(c => c.insurer)))];
+  const countries: string[] = ['', ...Array.from(new Set(claims.map(c => c.country)))];
   const statuses = ['', 'APPROVED', 'REJECTED', 'PENDING', 'IN_REVIEW'];
 
   return (

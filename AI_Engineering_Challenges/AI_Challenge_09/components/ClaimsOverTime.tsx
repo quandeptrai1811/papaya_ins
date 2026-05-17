@@ -2,21 +2,26 @@
 import { useState, useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-function weekKey(d) {
+function weekKey(d: string): string {
   const date = new Date(d);
   const jan1 = new Date(date.getFullYear(), 0, 1);
-  const week = Math.ceil(((date - jan1) / 86400000 + jan1.getDay() + 1) / 7);
+  const week = Math.ceil(((date.getTime() - jan1.getTime()) / 86400000 + jan1.getDay() + 1) / 7);
   return `W${String(week).padStart(2, '0')}`;
 }
-function monthKey(d) {
+function monthKey(d: string): string {
   return d.slice(0, 7);
 }
 
-export default function ClaimsOverTime({ claims }) {
-  const [groupBy, setGroupBy] = useState('month');
+interface Claim {
+  submitted_date: string;
+  [key: string]: any;
+}
+
+export default function ClaimsOverTime({ claims }: { claims: Claim[] }) {
+  const [groupBy, setGroupBy] = useState<'week' | 'month'>('month');
 
   const data = useMemo(() => {
-    const map = {};
+    const map: Record<string, number> = {};
     claims.forEach(c => {
       const key = groupBy === 'month' ? monthKey(c.submitted_date) : weekKey(c.submitted_date);
       map[key] = (map[key] || 0) + 1;
