@@ -1,4 +1,4 @@
-# Papaya Insurance Glossary Search App
+# AI Challenge 04: Insurance Glossary Search App
 
 This is a high-performance, offline-capable **Next.js & TypeScript** Single Page Application (SPA) designed to help members quickly look up complex insurance terminology. Built for AI Engineering Challenge 04.
 

@@ -1,4 +1,4 @@
-# Papaya Insurance Claims Analytics Dashboard
+# AI Challenge 09: Claims Analytics Dashboard
 
 This is a highly interactive, responsive, and type-safe **Next.js & TypeScript** application built for AI Engineering Challenge 09. It serves as a comprehensive dashboard for underwriters and claim managers to analyze and visualize a mock dataset of 5,000 insurance claims.
 

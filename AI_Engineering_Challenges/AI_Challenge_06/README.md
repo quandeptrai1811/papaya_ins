@@ -1,4 +1,4 @@
-# Papaya Insurance Policy Benefits Calculator
+# AI Challenge 06: Policy Benefits Calculator
 
 This is a highly robust, chronological insurance benefits calculation engine written in **Node.js & TypeScript**. Built for AI Engineering Challenge 06. 
 

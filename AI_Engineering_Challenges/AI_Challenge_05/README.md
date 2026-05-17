@@ -1,4 +1,4 @@
-# Papaya Insurance Policy Summary Generator
+# AI Challenge 05: Policy Summary Generator
 
 This is a dynamic, client-side **Next.js & TypeScript** web application built for AI Engineering Challenge 05. It takes complex nested insurance policy JSON data and converts it into a beautifully formatted, print-ready document. 
 

@@ -1,4 +1,4 @@
-# Papaya Insurance Email Previewer
+# AI Challenge 03: Claims Lifecycle Email Previewer
 
 This is a **Next.js & TypeScript** application built for AI Engineering Challenge 03. It serves as a live previewer for the Papaya Insurance claims lifecycle email templates.
 

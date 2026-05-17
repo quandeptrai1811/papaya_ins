@@ -1,4 +1,4 @@
-# Papaya Insurance Claims Submission Wizard
+# AI Challenge 07: Claims Submission Wizard
 
 This is a premium, fully responsive, multi-step **Next.js & TypeScript** claims submission application built for AI Engineering Challenge 07. It provides members with a seamless, high-fidelity wizard interface to submit Outpatient, Inpatient, and Dental insurance claims.
 
