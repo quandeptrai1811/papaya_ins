@@ -95,7 +95,7 @@ export default function Step5Review({ formData, onBack, onJumpTo, onReset }) {
 
       {/* Confirm */}
       <div className="confirm-row" onClick={() => setConfirmed(c => !c)}>
-        <input type="checkbox" checked={confirmed} onChange={() => setConfirmed(c => !c)} />
+        <input type="checkbox" checked={confirmed} onChange={() => {}} onClick={e => { e.stopPropagation(); setConfirmed(c => !c); }} />
         <p>I confirm that all information provided in this claim is accurate and complete to the best of my knowledge. I understand that providing false information may result in claim denial.</p>
       </div>
 
