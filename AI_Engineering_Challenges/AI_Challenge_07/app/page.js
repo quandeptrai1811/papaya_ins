@@ -41,6 +41,7 @@ export default function WizardPage() {
   const next = () => setStep(s => Math.min(s + 1, 5));
   const back = () => setStep(s => Math.max(s - 1, 1));
   const jumpTo = (n) => setStep(n);
+  const reset = () => { setStep(1); setFormData(initialState); };
 
   const props = { formData, onChange: handleChange, onNext: next, onBack: back };
 
@@ -58,7 +59,7 @@ export default function WizardPage() {
         {step === 2 && <Step2Member {...props} />}
         {step === 3 && <Step3Diagnosis {...props} />}
         {step === 4 && <Step4Documents {...props} />}
-        {step === 5 && <Step5Review {...props} onJumpTo={jumpTo} />}
+        {step === 5 && <Step5Review {...props} onJumpTo={jumpTo} onReset={reset} />}
       </div>
     </main>
   );

@@ -5,7 +5,7 @@ import { mockDependents } from '@/data/mockData';
 
 const TYPE_LABELS = { OUTPATIENT: '🏥 Outpatient', INPATIENT: '🛏️ Inpatient', DENTAL: '🦷 Dental' };
 
-export default function Step5Review({ formData, onBack, onJumpTo }) {
+export default function Step5Review({ formData, onBack, onJumpTo, onReset }) {
   const [confirmed, setConfirmed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { claimType, member, diagnosis, documents } = formData;
@@ -107,12 +107,20 @@ export default function Step5Review({ formData, onBack, onJumpTo }) {
       </div>
 
       {submitted && (
-        <div className="modal-overlay" onClick={() => {}}>
+        <div className="modal-overlay">
           <div className="modal-box">
             <div className="modal-icon">🎉</div>
             <h2>Claim Submitted!</h2>
             <p>Your claim has been received and is being processed. You will receive a confirmation shortly.</p>
             <p className="ref">REF: CLM-{Date.now().toString().slice(-8)}</p>
+            <div className="modal-actions">
+              <button className="btn-secondary" onClick={onReset}>
+                ↩ Submit Another Claim
+              </button>
+              <button className="btn-primary" onClick={() => setSubmitted(false)}>
+                ✓ Done
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -274,8 +274,15 @@ textarea { resize: vertical; min-height: 90px; }
 }
 .modal-icon { font-size: 4rem; margin-bottom: 16px; }
 .modal-box h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
-.modal-box p { color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
-.modal-box .ref { font-size: 0.82rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; }
+.modal-box p { color: var(--muted); margin-bottom: 12px; line-height: 1.6; }
+.modal-box .ref { font-size: 0.82rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 32px; display: block; }
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
 @keyframes scaleIn { from { opacity:0; transform:scale(0.85) } to { opacity:1; transform:scale(1) } }
