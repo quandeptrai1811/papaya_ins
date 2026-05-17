@@ -112,14 +112,16 @@ export default function Home() {
         currentTemplateId={currentId} 
         onSelectTemplate={setCurrentId} 
       />
-      <EditorPanel 
-        vars={templates[currentId].vars} 
-        onVarChange={handleVarChange} 
-      />
-      <PreviewPanel 
-        htmlContent={rawHtmlCache[currentId] || ""} 
-        vars={templates[currentId].vars} 
-      />
+      <div className="main-workspace">
+        <EditorPanel 
+          vars={templates[currentId].vars} 
+          onVarChange={handleVarChange} 
+        />
+        <PreviewPanel 
+          htmlContent={rawHtmlCache[currentId] || ""} 
+          vars={templates[currentId].vars} 
+        />
+      </div>
     </div>
   );
 }
