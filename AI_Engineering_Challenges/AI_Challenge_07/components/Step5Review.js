@@ -114,11 +114,8 @@ export default function Step5Review({ formData, onBack, onJumpTo, onReset }) {
             <p>Your claim has been received and is being processed. You will receive a confirmation shortly.</p>
             <p className="ref">REF: CLM-{Date.now().toString().slice(-8)}</p>
             <div className="modal-actions">
-              <button className="btn-secondary" onClick={onReset}>
+              <button className="btn-primary" onClick={onReset}>
                 ↩ Submit Another Claim
-              </button>
-              <button className="btn-primary" onClick={() => setSubmitted(false)}>
-                ✓ Done
               </button>
             </div>
           </div>
