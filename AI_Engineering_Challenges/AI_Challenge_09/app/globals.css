@@ -212,6 +212,19 @@ body {
 .recharts-tooltip-item {
   color: #fff !important;
 }
+.recharts-wrapper *,
+.recharts-surface,
+.recharts-surface *,
+.recharts-legend-item,
+.recharts-wrapper:focus,
+.recharts-surface:focus,
+path:focus,
+svg:focus,
+rect:focus,
+g:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 .toggle-group {
   display: flex;
