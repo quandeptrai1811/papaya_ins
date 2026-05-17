@@ -7,7 +7,13 @@ const TYPES = [
   { id: 'DENTAL',     icon: '🦷', title: 'Dental',     desc: 'Dental treatments & oral health procedures' },
 ];
 
-export default function Step1ClaimType({ formData, onChange, onNext }) {
+interface Step1ClaimTypeProps {
+  formData: any;
+  onChange: (step: string, value: any) => void;
+  onNext: () => void;
+}
+
+export default function Step1ClaimType({ formData, onChange, onNext }: Step1ClaimTypeProps) {
   const selected = formData.claimType;
 
   return (

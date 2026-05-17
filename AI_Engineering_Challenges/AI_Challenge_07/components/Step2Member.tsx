@@ -2,7 +2,14 @@
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { mockDependents } from '@/data/mockData';
 
-export default function Step2Member({ formData, onChange, onNext, onBack }) {
+interface Step2MemberProps {
+  formData: any;
+  onChange: (step: string, value: any) => void;
+  onNext: () => void;
+  onBack: () => void;
+}
+
+export default function Step2Member({ formData, onChange, onNext, onBack }: Step2MemberProps) {
   const m = formData.member;
   const update = (field, val) => onChange('member', { ...m, [field]: val });
 

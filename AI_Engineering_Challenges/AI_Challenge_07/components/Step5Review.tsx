@@ -5,7 +5,14 @@ import { mockDependents } from '@/data/mockData';
 
 const TYPE_LABELS = { OUTPATIENT: '🏥 Outpatient', INPATIENT: '🛏️ Inpatient', DENTAL: '🦷 Dental' };
 
-export default function Step5Review({ formData, onBack, onJumpTo, onReset }) {
+interface Step5ReviewProps {
+  formData: any;
+  onBack: () => void;
+  onJumpTo: (step: number) => void;
+  onReset: () => void;
+}
+
+export default function Step5Review({ formData, onBack, onJumpTo, onReset }: Step5ReviewProps) {
   const [confirmed, setConfirmed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { claimType, member, diagnosis, documents } = formData;
@@ -19,11 +26,11 @@ export default function Step5Review({ formData, onBack, onJumpTo, onReset }) {
 
   const los = (() => {
     if (claimType !== 'INPATIENT' || !diagnosis.treatmentDateStart || !diagnosis.treatmentDateEnd) return null;
-    const d = (new Date(diagnosis.treatmentDateEnd) - new Date(diagnosis.treatmentDateStart)) / 86400000;
+    const d = (new Date(diagnosis.treatmentDateEnd).getTime() - new Date(diagnosis.treatmentDateStart).getTime()) / 86400000;
     return d > 0 ? d : null;
   })();
 
-  const uploadedDocs = Object.entries(documents).filter(([, v]) => v?.progress === 100);
+  const uploadedDocs = Object.entries(documents).filter(([, v]) => (v as any)?.progress === 100);
 
   return (
     <div>
@@ -84,7 +91,7 @@ export default function Step5Review({ formData, onBack, onJumpTo, onReset }) {
           <button className="edit-btn" onClick={() => onJumpTo(4)}><Pencil size={12} /> Edit</button>
         </div>
         <div className="review-grid">
-          {uploadedDocs.map(([id, doc]) => (
+          {uploadedDocs.map(([id, doc]: [string, any]) => (
             <div key={id} className="review-field">
               <span className="rl">{id.replace(/_/g, ' ')}</span>
               <span className="rv">✅ {doc.name}</span>

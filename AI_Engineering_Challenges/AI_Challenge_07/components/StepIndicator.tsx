@@ -9,7 +9,11 @@ const STEPS = [
   { label: 'Review' },
 ];
 
-export default function StepIndicator({ current }) {
+interface StepIndicatorProps {
+  current: number;
+}
+
+export default function StepIndicator({ current }: StepIndicatorProps) {
   return (
     <div className="step-indicator">
       {STEPS.map((s, i) => {

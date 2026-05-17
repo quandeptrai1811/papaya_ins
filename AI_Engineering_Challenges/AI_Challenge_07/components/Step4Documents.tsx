@@ -21,13 +21,20 @@ const DOCS = {
 const MAX_SIZE = 10 * 1024 * 1024;
 const ALLOWED = ['application/pdf', 'image/jpeg', 'image/png'];
 
-export default function Step4Documents({ formData, onChange, onNext, onBack }) {
-  const docs = DOCS[formData.claimType] || [];
-  const uploads = formData.documents;
-  const [errors, setErrors] = useState({});
-  const inputRefs = useRef({});
+interface Step4DocumentsProps {
+  formData: any;
+  onChange: (step: string, value: any) => void;
+  onNext: () => void;
+  onBack: () => void;
+}
 
-  const updateDoc = (id, val) => onChange('documents', { ...uploads, [id]: val });
+export default function Step4Documents({ formData, onChange, onNext, onBack }: Step4DocumentsProps) {
+  const docs = DOCS[formData.claimType as keyof typeof DOCS] || [];
+  const uploads = formData.documents;
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const inputRefs = useRef<Record<string, HTMLInputElement | null>>({});
+
+  const updateDoc = (id: string, val: any) => onChange('documents', { ...uploads, [id]: val });
   const removeDoc = (id) => {
     const next = { ...uploads };
     delete next[id];
@@ -101,8 +108,8 @@ export default function Step4Documents({ formData, onChange, onNext, onBack }) {
                   <input
                     type="file" accept=".pdf,.jpg,.jpeg,.png"
                     style={{ display: 'none' }}
-                    ref={el => inputRefs.current[doc.id] = el}
-                    onChange={e => handleFile(doc.id, e.target.files[0])}
+                    ref={el => { inputRefs.current[doc.id] = el; }}
+                    onChange={e => handleFile(doc.id, e.target.files?.[0])}
                   />
                   <button className="upload-btn" onClick={() => inputRefs.current[doc.id]?.click()}>
                     <Upload size={14} style={{ display: 'inline', marginRight: 6 }} />

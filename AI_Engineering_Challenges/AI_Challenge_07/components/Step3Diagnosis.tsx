@@ -17,7 +17,14 @@ function highlight(text, query) {
   );
 }
 
-export default function Step3Diagnosis({ formData, onChange, onNext, onBack }) {
+interface Step3DiagnosisProps {
+  formData: any;
+  onChange: (step: string, value: any) => void;
+  onNext: () => void;
+  onBack: () => void;
+}
+
+export default function Step3Diagnosis({ formData, onChange, onNext, onBack }: Step3DiagnosisProps) {
   const d = formData.diagnosis;
   const claimType = formData.claimType;
   const update = (field, val) => onChange('diagnosis', { ...d, [field]: val });
@@ -26,8 +33,8 @@ export default function Step3Diagnosis({ formData, onChange, onNext, onBack }) {
   const [icdResults, setIcdResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [provSuggestions, setProvSuggestions] = useState([]);
-  const debounceRef = useRef(null);
-  const dropdownRef = useRef(null);
+  const debounceRef = useRef<any>(null);
+  const dropdownRef = useRef<any>(null);
 
   // ICD-10 debounced search
   const handleIcdInput = useCallback((q) => {
@@ -64,7 +71,7 @@ export default function Step3Diagnosis({ formData, onChange, onNext, onBack }) {
   // Length of stay calculation
   const los = (() => {
     if (claimType !== 'INPATIENT' || !d.treatmentDateStart || !d.treatmentDateEnd) return null;
-    const diff = (new Date(d.treatmentDateEnd) - new Date(d.treatmentDateStart)) / 86400000;
+    const diff = (new Date(d.treatmentDateEnd).getTime() - new Date(d.treatmentDateStart).getTime()) / 86400000;
     return diff > 0 ? diff : null;
   })();
 
