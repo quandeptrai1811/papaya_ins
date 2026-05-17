@@ -1,0 +1,58 @@
+{
+  "policy_number": "POL-2024-TEST-001",
+  "effective_date": "2024-01-01",
+  "deductible_annual": 5000,
+  "benefits": {
+    "OUTPATIENT": {
+      "annual_limit": 50000,
+      "waiting_period_days": 30,
+      "copay": {
+        "percentage": 20,
+        "max_per_visit": 1000
+      },
+      "sub_benefits": {
+        "Doctor Visit": {
+          "limit_per_visit": 3000,
+          "visits_per_year": 10
+        },
+        "Diagnostic Tests": {
+          "limit_per_year": 10000
+        }
+      }
+    },
+    "INPATIENT": {
+      "annual_limit": 500000,
+      "waiting_period_days": 90,
+      "copay": {
+        "percentage": 0
+      },
+      "sub_benefits": {
+        "Room & Board": {
+          "limit_per_day": 8000,
+          "max_days": 30
+        },
+        "Surgery": {
+          "limit_per_event": 200000
+        }
+      }
+    },
+    "DENTAL": {
+      "annual_limit": 10000,
+      "waiting_period_days": 180,
+      "copay": {
+        "percentage": 50,
+        "fixed": 500
+      },
+      "sub_benefits": {
+        "Basic Dental": {
+          "limit_per_visit": 2000
+        }
+      }
+    }
+  },
+  "exclusions": [
+    "Cosmetic",
+    "Self-inflicted",
+    "Pre-existing"
+  ]
+}

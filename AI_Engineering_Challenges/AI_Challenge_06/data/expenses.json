@@ -1,0 +1,182 @@
+[
+  {
+    "expense_id": "EXP-001",
+    "date": "2024-01-15",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Common Cold",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-002",
+    "date": "2024-02-15",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 3000,
+    "diagnosis": "Flu",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-003",
+    "date": "2024-02-28",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Diagnostic Tests",
+    "amount": 6000,
+    "diagnosis": "Blood Test",
+    "provider": "Central Lab"
+  },
+  {
+    "expense_id": "EXP-004",
+    "date": "2024-03-05",
+    "benefit_type": "INPATIENT",
+    "sub_benefit": "Room & Board",
+    "amount": 5000,
+    "diagnosis": "Observation",
+    "provider": "General Hospital"
+  },
+  {
+    "expense_id": "EXP-005",
+    "date": "2024-04-10",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 4000,
+    "diagnosis": "Allergy",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-006",
+    "date": "2024-05-15",
+    "benefit_type": "INPATIENT",
+    "sub_benefit": "Surgery",
+    "amount": 250000,
+    "diagnosis": "Appendicitis",
+    "provider": "General Hospital"
+  },
+  {
+    "expense_id": "EXP-007",
+    "date": "2024-06-01",
+    "benefit_type": "DENTAL",
+    "sub_benefit": "Basic Dental",
+    "amount": 1500,
+    "diagnosis": "Cleaning",
+    "provider": "Smile Clinic"
+  },
+  {
+    "expense_id": "EXP-008",
+    "date": "2024-06-15",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Diagnostic Tests",
+    "amount": 8000,
+    "diagnosis": "MRI Scan",
+    "provider": "Central Lab"
+  },
+  {
+    "expense_id": "EXP-009",
+    "date": "2024-07-01",
+    "benefit_type": "DENTAL",
+    "sub_benefit": "Basic Dental",
+    "amount": 3000,
+    "diagnosis": "Filling",
+    "provider": "Smile Clinic"
+  },
+  {
+    "expense_id": "EXP-010",
+    "date": "2024-08-01",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-011",
+    "date": "2024-08-02",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-012",
+    "date": "2024-08-03",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-013",
+    "date": "2024-08-04",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-014",
+    "date": "2024-08-05",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-015",
+    "date": "2024-08-06",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-016",
+    "date": "2024-08-07",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-017",
+    "date": "2024-08-08",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2000,
+    "diagnosis": "Checkup",
+    "provider": "City Clinic"
+  },
+  {
+    "expense_id": "EXP-018",
+    "date": "2024-09-01",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 100000,
+    "diagnosis": "Cosmetic Treatment",
+    "provider": "Beauty Clinic"
+  },
+  {
+    "expense_id": "EXP-019",
+    "date": "2024-10-01",
+    "benefit_type": "INPATIENT",
+    "sub_benefit": "Surgery",
+    "amount": 400000,
+    "diagnosis": "Major Surgery",
+    "provider": "General Hospital"
+  },
+  {
+    "expense_id": "EXP-020",
+    "date": "2024-12-01",
+    "benefit_type": "DENTAL",
+    "sub_benefit": "Basic Dental",
+    "amount": 20000,
+    "diagnosis": "Major Dental Work",
+    "provider": "Smile Clinic"
+  }
+]

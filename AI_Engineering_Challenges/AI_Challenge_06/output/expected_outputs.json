@@ -1,0 +1,216 @@
+[
+  {
+    "expense_id": "EXP-001",
+    "submitted_amount": 2000,
+    "covered_amount": 0,
+    "copay_amount": 0,
+    "member_pays": 2000,
+    "decision": "DENIED",
+    "reason": "Denied: Within 30-day waiting period.",
+    "remaining_annual_limit": 50000,
+    "remaining_visit_limit": 10
+  },
+  {
+    "expense_id": "EXP-002",
+    "submitted_amount": 3000,
+    "covered_amount": 0,
+    "copay_amount": 0,
+    "member_pays": 3000,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Deductible applied: 3000.",
+    "remaining_annual_limit": 50000,
+    "remaining_visit_limit": 10
+  },
+  {
+    "expense_id": "EXP-003",
+    "submitted_amount": 6000,
+    "covered_amount": 3200,
+    "copay_amount": 800,
+    "member_pays": 2800,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Deductible applied: 2000. 20% copay applied.",
+    "remaining_annual_limit": 46800
+  },
+  {
+    "expense_id": "EXP-004",
+    "submitted_amount": 5000,
+    "covered_amount": 0,
+    "copay_amount": 0,
+    "member_pays": 5000,
+    "decision": "DENIED",
+    "reason": "Denied: Within 90-day waiting period.",
+    "remaining_annual_limit": 500000,
+    "remaining_visit_limit": null
+  },
+  {
+    "expense_id": "EXP-005",
+    "submitted_amount": 4000,
+    "covered_amount": 2400,
+    "copay_amount": 600,
+    "member_pays": 1600,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Capped at per-visit limit of 3000. 20% copay applied.",
+    "remaining_annual_limit": 44400,
+    "remaining_visit_limit": 9
+  },
+  {
+    "expense_id": "EXP-006",
+    "submitted_amount": 250000,
+    "covered_amount": 200000,
+    "copay_amount": 0,
+    "member_pays": 50000,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Capped at per-event limit of 200000.",
+    "remaining_annual_limit": 300000
+  },
+  {
+    "expense_id": "EXP-007",
+    "submitted_amount": 1500,
+    "covered_amount": 0,
+    "copay_amount": 0,
+    "member_pays": 1500,
+    "decision": "DENIED",
+    "reason": "Denied: Within 180-day waiting period.",
+    "remaining_annual_limit": 10000,
+    "remaining_visit_limit": null
+  },
+  {
+    "expense_id": "EXP-008",
+    "submitted_amount": 8000,
+    "covered_amount": 5800,
+    "copay_amount": 1000,
+    "member_pays": 2200,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Capped by remaining sub-benefit annual limit. 20% copay applied.",
+    "remaining_annual_limit": 38600
+  },
+  {
+    "expense_id": "EXP-009",
+    "submitted_amount": 3000,
+    "covered_amount": 750,
+    "copay_amount": 1250,
+    "member_pays": 2250,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Capped at per-visit limit of 2000. 500 THB fixed copay + 50% copay applied.",
+    "remaining_annual_limit": 9250
+  },
+  {
+    "expense_id": "EXP-010",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 37000,
+    "remaining_visit_limit": 8
+  },
+  {
+    "expense_id": "EXP-011",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 35400,
+    "remaining_visit_limit": 7
+  },
+  {
+    "expense_id": "EXP-012",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 33800,
+    "remaining_visit_limit": 6
+  },
+  {
+    "expense_id": "EXP-013",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 32200,
+    "remaining_visit_limit": 5
+  },
+  {
+    "expense_id": "EXP-014",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 30600,
+    "remaining_visit_limit": 4
+  },
+  {
+    "expense_id": "EXP-015",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 29000,
+    "remaining_visit_limit": 3
+  },
+  {
+    "expense_id": "EXP-016",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 27400,
+    "remaining_visit_limit": 2
+  },
+  {
+    "expense_id": "EXP-017",
+    "submitted_amount": 2000,
+    "covered_amount": 1600,
+    "copay_amount": 400,
+    "member_pays": 400,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "20% copay applied.",
+    "remaining_annual_limit": 25800,
+    "remaining_visit_limit": 1
+  },
+  {
+    "expense_id": "EXP-018",
+    "submitted_amount": 100000,
+    "covered_amount": 0,
+    "copay_amount": 0,
+    "member_pays": 100000,
+    "decision": "DENIED",
+    "reason": "Diagnosis matches policy exclusions.",
+    "remaining_annual_limit": 25800,
+    "remaining_visit_limit": 1
+  },
+  {
+    "expense_id": "EXP-019",
+    "submitted_amount": 400000,
+    "covered_amount": 200000,
+    "copay_amount": 0,
+    "member_pays": 200000,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Capped at per-event limit of 200000.",
+    "remaining_annual_limit": 100000
+  },
+  {
+    "expense_id": "EXP-020",
+    "submitted_amount": 20000,
+    "covered_amount": 750,
+    "copay_amount": 1250,
+    "member_pays": 19250,
+    "decision": "PARTIALLY_COVERED",
+    "reason": "Capped at per-visit limit of 2000. 500 THB fixed copay + 50% copay applied.",
+    "remaining_annual_limit": 8500
+  }
+]
