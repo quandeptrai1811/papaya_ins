@@ -89,3 +89,6 @@ The project includes an optimized dataset generator in `scripts/generate-data.mj
 - Mostly cheap, frequent outpatient visits (500 to 2,000 THB).
 - Rare, highly expensive inpatient surgeries (up to 300,000 THB).
 - Randomly distributed processing times (0 to 14 days) and status metrics.
+
+> [!IMPORTANT]
+> **Include the generated dataset in the repository** (`public/claims.json`) to allow immediate, zero-latency local load times and full offline capabilities out-of-the-box.
