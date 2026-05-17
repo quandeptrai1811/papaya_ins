@@ -1,7 +1,22 @@
 import { X } from 'lucide-react';
 import Highlight from './Highlight';
 
-export default function TermModal({ termData, allTerms, onClose, onSelectRelated }) {
+interface TermData {
+  id: string;
+  term: string;
+  definition: string;
+  category: string;
+  relatedTerms?: string[];
+}
+
+interface TermModalProps {
+  termData: TermData | null;
+  allTerms: TermData[];
+  onClose: () => void;
+  onSelectRelated: (term: TermData) => void;
+}
+
+export default function TermModal({ termData, allTerms, onClose, onSelectRelated }: TermModalProps) {
   if (!termData) return null;
 
   return (

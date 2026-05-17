@@ -1,4 +1,12 @@
-export const glossaryData = [
+export interface Term {
+  id: string;
+  term: string;
+  category: string;
+  definition: string;
+  relatedTerms?: string[];
+}
+
+export const glossaryData: Term[] = [
   // General Insurance
   {
     id: "premium",

@@ -1,4 +1,9 @@
-export default function Highlight({ text, highlight }) {
+interface HighlightProps {
+  text: string;
+  highlight: string;
+}
+
+export default function Highlight({ text, highlight }: HighlightProps) {
   if (!highlight.trim()) {
     return <span>{text}</span>;
   }

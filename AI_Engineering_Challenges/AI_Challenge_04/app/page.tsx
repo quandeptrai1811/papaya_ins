@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from 'react';
-import { glossaryData } from '@/data/glossary';
+import { glossaryData, Term } from '@/data/glossary';
 import Highlight from '@/components/Highlight';
 import TermModal from '@/components/TermModal';
 
@@ -12,8 +12,8 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedTerm, setSelectedTerm] = useState(null);
-  const scrollAreaRef = useRef(null);
+  const [selectedTerm, setSelectedTerm] = useState<Term | null>(null);
+  const scrollAreaRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -44,7 +44,7 @@ export default function Home() {
     }
 
     // Group by category for display
-    const grouped = {};
+    const grouped: Record<string, Term[]> = {};
     result.forEach(term => {
       if (!grouped[term.category]) {
         grouped[term.category] = [];
@@ -61,9 +61,9 @@ export default function Home() {
   }, [debouncedSearchQuery, activeCategory]);
 
   // Keep track of collapsed categories
-  const [collapsedCategories, setCollapsedCategories] = useState({});
+  const [collapsedCategories, setCollapsedCategories] = useState<Record<string, boolean>>({});
 
-  const toggleCategory = (category) => {
+  const toggleCategory = (category: string) => {
     setCollapsedCategories(prev => ({
       ...prev,
       [category]: !prev[category]
@@ -71,7 +71,7 @@ export default function Home() {
   };
 
   // Handle A-Z Jump
-  const handleAlphaJump = (letter) => {
+  const handleAlphaJump = (letter: string) => {
     // Force expand all categories to ensure the target is visible
     setCollapsedCategories({});
     
@@ -79,21 +79,23 @@ export default function Home() {
     setTimeout(() => {
       const elements = document.querySelectorAll('.term-card-title');
       for (let el of elements) {
-        if (el.textContent.toUpperCase().startsWith(letter)) {
+        if (el.textContent && el.textContent.toUpperCase().startsWith(letter)) {
           el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          const card = el.closest('.term-card');
-          card.style.borderColor = 'var(--primary)';
-          setTimeout(() => { card.style.borderColor = 'var(--border)'; }, 1000);
+          const card = el.closest('.term-card') as HTMLElement | null;
+          if (card) {
+            card.style.borderColor = 'var(--primary)';
+            setTimeout(() => { card.style.borderColor = 'var(--border)'; }, 1000);
+          }
           break;
         }
       }
     }, 50);
   };
 
-  const searchInputRef = useRef(null);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         searchInputRef.current?.focus();
