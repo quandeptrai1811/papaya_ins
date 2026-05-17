@@ -1,8 +1,8 @@
-const path = require('path');
-const fs = require('fs');
-const BenefitsCalculator = require('./calculator');
-const policy = require('../data/policy.json');
-const expenses = require('../data/expenses.json');
+import * as path from 'path';
+import * as fs from 'fs';
+import BenefitsCalculator from './calculator';
+import policy from '../data/policy.json';
+import expenses from '../data/expenses.json';
 
 console.log('--- Papaya Insurance Policy Calculator ---');
 console.log(`Policy: ${policy.policy_number} | Effective Date: ${policy.effective_date}`);

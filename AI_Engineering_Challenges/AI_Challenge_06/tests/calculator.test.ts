@@ -1,6 +1,6 @@
-const BenefitsCalculator = require('../src/calculator');
-const policy = require('../data/policy.json');
-const expenses = require('../data/expenses.json');
+import BenefitsCalculator from '../src/calculator';
+import policy from '../data/policy.json';
+import expenses from '../data/expenses.json';
 
 describe('Policy Benefits Calculator', () => {
   let calc;

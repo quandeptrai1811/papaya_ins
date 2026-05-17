@@ -3,8 +3,17 @@
  * Handles tracking remaining limits, deductibles, and processing expenses.
  */
 
-class BenefitsCalculator {
-  constructor(policy) {
+export default class BenefitsCalculator {
+  policy: any;
+  effectiveDate: Date;
+  remainingDeductible: number;
+  state: {
+    annual: Record<string, number>;
+    visits: Record<string, Record<string, number>>;
+    sub_annual: Record<string, Record<string, number>>;
+  };
+
+  constructor(policy: any) {
     this.policy = policy;
     this.effectiveDate = new Date(policy.effective_date);
     
@@ -17,7 +26,7 @@ class BenefitsCalculator {
     };
 
     // Populate initial state from policy
-    for (const [type, benefit] of Object.entries(policy.benefits || {})) {
+    for (const [type, benefit] of Object.entries(policy.benefits || {}) as [string, any][]) {
       if (benefit.annual_limit) {
         this.state.annual[type] = benefit.annual_limit;
       }
@@ -26,7 +35,7 @@ class BenefitsCalculator {
       this.state.sub_annual[type] = {};
       
       if (benefit.sub_benefits) {
-        for (const [subName, subRules] of Object.entries(benefit.sub_benefits)) {
+        for (const [subName, subRules] of Object.entries(benefit.sub_benefits) as [string, any][]) {
           if (subRules.visits_per_year) {
             this.state.visits[type][subName] = subRules.visits_per_year;
           }
@@ -38,13 +47,13 @@ class BenefitsCalculator {
     }
   }
 
-  processExpenses(expenses) {
+  processExpenses(expenses: any[]) {
     // Ensure chronological processing
-    const sortedExpenses = [...expenses].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const sortedExpenses = [...expenses].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
     return sortedExpenses.map(expense => this.processSingleExpense(expense));
   }
 
-  processSingleExpense(expense) {
+  processSingleExpense(expense: any) {
     let { expense_id, date, benefit_type, sub_benefit, amount, diagnosis } = expense;
     let submitted = amount;
     let covered = amount;
@@ -236,5 +245,3 @@ class BenefitsCalculator {
     return result;
   }
 }
-
-module.exports = BenefitsCalculator;
