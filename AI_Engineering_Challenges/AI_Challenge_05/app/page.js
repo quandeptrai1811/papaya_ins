@@ -152,8 +152,8 @@ export default function Home() {
           </section>
 
           {/* Copay & Network */}
-          <div style={{display: 'flex', gap: '40px'}}>
-            <section className="section" style={{flex: 1}}>
+          <div className="copay-network-flex">
+            <section className="section flex-1">
               <h2 className="section-title">Copayment</h2>
               <table>
                 <thead>
@@ -176,7 +176,7 @@ export default function Home() {
               </table>
             </section>
             
-            <section className="section" style={{flex: 1}}>
+            <section className="section flex-1">
               <h2 className="section-title">Network</h2>
               <div className="quick-card">
                 <p style={{marginBottom: '8px'}}><strong>Hospitals:</strong> {formatNumber(p.network.hospital_count)}</p>

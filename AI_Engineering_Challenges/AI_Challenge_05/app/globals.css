@@ -332,6 +332,105 @@ th {
   margin-top: 4px;
 }
 
+/* RESPONSIVE MEDIA QUERIES */
+.flex-1 {
+  flex: 1;
+}
+
+.copay-network-flex {
+  display: flex;
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .document-page {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .policy-selector {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .policy-btn {
+    text-align: center;
+    flex: 1 1 45%;
+    min-width: 160px;
+  }
+
+  .print-btn {
+    margin-top: 16px;
+    max-width: 320px;
+  }
+
+  .document-area {
+    padding: 20px 12px;
+  }
+
+  .document-page {
+    padding: 24px 16px;
+  }
+
+  .doc-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .doc-meta {
+    text-align: left;
+  }
+
+  .quick-ref-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .copay-network-flex {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-width: 485px) {
+  .policy-btn {
+    flex: 1 1 100%;
+  }
+  
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* PRINT MEDIA QUERIES */
 @media print {
   body {
