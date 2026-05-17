@@ -434,3 +434,139 @@ mark {
   color: var(--text-main);
   margin-bottom: 8px;
 }
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .sidebar-header {
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .sidebar-nav {
+    padding: 12px 20px;
+    overflow-y: visible;
+  }
+
+  .nav-section {
+    margin-bottom: 16px;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+  
+  .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    white-space: nowrap;
+    width: auto;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .alphabet-grid {
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .alpha-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .main-content {
+    height: auto;
+    overflow: visible;
+  }
+
+  .search-header {
+    padding: 16px 20px;
+  }
+
+  .search-input {
+    padding: 11px 14px 11px 38px;
+    font-size: 14px;
+  }
+
+  .term-scroll-area {
+    padding: 20px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .category-group-title {
+    font-size: 18px;
+  }
+
+  .term-count {
+    font-size: 13px;
+  }
+
+  .term-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .term-card {
+    padding: 16px;
+  }
+
+  .term-card-title {
+    font-size: 16px;
+  }
+
+  .term-card-def {
+    font-size: 13px;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10px;
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-title-area h2 {
+    font-size: 18px;
+  }
+
+  .modal-body {
+    padding: 20px 16px;
+  }
+
+  .modal-definition {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .related-pill {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
