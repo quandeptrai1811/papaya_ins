@@ -15,6 +15,7 @@
 | **07**    | [**Claims Intake Wizard**](#7-claims-intake-wizard) <br> 5-step wizard with ICD-10 autocomplete & uploader progress.              | Next.js, TypeScript, Lucide Icons    | [Live Demo](https://papaya-ins-07.vercel.app/) | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_07) | ✅ Completed |
 | **09**    | [**Claims Analytics Dashboard**](#9-claims-analytics-dashboard) <br> High-fidelity charts visualizer for 5,000 log-normal claims. | Next.js, TypeScript, Recharts        | [Live Demo](https://papaya-ins-09.vercel.app/) | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_09) | ✅ Completed |
 | **10**    | [**Fraud Detection Engine**](#10-fraud-detection-scoring-engine) <br> Multi-pass fraud analyzer executing 8 mathematical rules.   | Node.js, TypeScript, Jest            | _N/A (Engine/Library)_                         | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_10) | ✅ Completed |
+| **12**    | [**Regulatory Rule Engine**](#12-multi-country-regulatory-rule-engine) <br> Decoupled multi-country rules engine parsing JSON configs. | Node.js, TypeScript, Jest            | _N/A (Engine/Library)_                         | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_12) | ✅ Completed |
 
 ---
 
@@ -187,6 +188,25 @@
 
 ---
 
+### 12. Multi-Country Regulatory Rule Engine
+
+- **Challenge File:** [AI_Challenge_12.md](./AI_Challenge_12/AI_Challenge_12.md)
+- **Requirements:**
+    - Build a configurable regulatory rules engine where country-specific rules are defined dynamically via decoupled JSON configuration files.
+    - Handle 5 distinct rule types: document requirements, processing SLA checking, waiting periods, data privacy masking, and coverage mandates.
+    - Enforce rules across three core countries (Thailand, Vietnam, Hong Kong) with realistic regulatory policies.
+    - Support effective date rule versioning and rule diff comparisons between countries.
+- **Solution Implementation:**
+    - Programmed a decoupled rule evaluator structure in pure Node.js & TypeScript.
+    - Implemented rule filtering based on the claim's `submission_date` relative to the rule's active lifecycle (`effective_date` & `expiry_date`).
+    - Engineered highly specific evaluation returns carrying actionable remediation actions and precise validation failure texts.
+    - Formulated a comprehensive diff comparison module that groups rules by type to print structural policy differences.
+    - Delivered a full interactive CLI supporting `npm start` (validate 15 test claims), `view <country>`, `diff <countryA> <countryB>`, and a skeleton `singapore.json` configuration demonstrating zero-code country onboarding.
+    - Tested using **17 rigorous Jest unit assertions** verifying all edge cases.
+- **Code Path:** [AI_Challenge_12 Folder](./AI_Challenge_12)
+
+---
+
 ## 🚀 Running Any Project Locally
 
 All web/Next.js projects follow the standard Next.js lifecycle. Backend engine projects run via Node.js/TypeScript.
@@ -219,7 +239,7 @@ All web/Next.js projects follow the standard Next.js lifecycle. Backend engine p
     ```
 3. Check the `output/` folder for clean CSV files and metrics reports.
 
-### 💻 Node.js Engine & CLI Projects (06, 10)
+### 💻 Node.js Engine & CLI Projects (06, 10, 12)
 
 1. Navigate to the project directory:
     ```bash

@@ -1,0 +1,93 @@
+{
+  "country": "thailand",
+  "rules": [
+    {
+      "rule_id": "TH-DOC-01",
+      "description": "Medical receipt is required for all claim types in Thailand",
+      "rule_type": "document_requirement",
+      "parameters": {
+        "required_documents": ["medical_receipt"],
+        "applies_to_claim_types": ["outpatient", "inpatient", "dental", "specialist", "maternity", "emergency"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "TH-DOC-02",
+      "description": "Discharge summary is required for inpatient claims in Thailand",
+      "rule_type": "document_requirement",
+      "parameters": {
+        "required_documents": ["discharge_summary"],
+        "applies_to_claim_types": ["inpatient"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "TH-DOC-03",
+      "description": "Prescription document is required for outpatient claims in Thailand",
+      "rule_type": "document_requirement",
+      "parameters": {
+        "required_documents": ["prescription"],
+        "applies_to_claim_types": ["outpatient"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "TH-SLA-01",
+      "description": "Outpatient claims must be processed within 15 business days in Thailand",
+      "rule_type": "sla_check",
+      "parameters": {
+        "sla_business_days": 15,
+        "sla_claim_types": ["outpatient", "dental", "specialist"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "TH-SLA-02",
+      "description": "Inpatient claims must be processed within 30 business days in Thailand",
+      "rule_type": "sla_check",
+      "parameters": {
+        "sla_business_days": 30,
+        "sla_claim_types": ["inpatient", "maternity"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "TH-WAIT-01",
+      "description": "General waiting period is 30 days from policy start in Thailand",
+      "rule_type": "waiting_period",
+      "parameters": {
+        "waiting_days_general": 30,
+        "waiting_days_preexisting": 120
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "TH-MASK-01",
+      "description": "Thai National ID must be partially masked — show last 4 digits only in reports",
+      "rule_type": "data_masking",
+      "parameters": {
+        "field": "national_id",
+        "mask_strategy": "last_4"
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "TH-COV-01",
+      "description": "Emergency treatment must be covered regardless of network status in Thailand",
+      "rule_type": "coverage_mandate",
+      "parameters": {
+        "mandate_type": "emergency_coverage",
+        "condition": "claim_type == 'emergency'"
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    }
+  ]
+}

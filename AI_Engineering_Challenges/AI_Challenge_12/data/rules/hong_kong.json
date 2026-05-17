@@ -1,0 +1,82 @@
+{
+  "country": "hong_kong",
+  "rules": [
+    {
+      "rule_id": "HK-DOC-01",
+      "description": "Medical receipt is required for all claim types in Hong Kong",
+      "rule_type": "document_requirement",
+      "parameters": {
+        "required_documents": ["medical_receipt"],
+        "applies_to_claim_types": ["outpatient", "inpatient", "dental", "specialist", "maternity", "emergency"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "HK-DOC-02",
+      "description": "Referral letter is required for specialist claims in Hong Kong",
+      "rule_type": "document_requirement",
+      "parameters": {
+        "required_documents": ["referral_letter"],
+        "applies_to_claim_types": ["specialist"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "HK-DOC-03",
+      "description": "Discharge summary is required for inpatient claims in Hong Kong",
+      "rule_type": "document_requirement",
+      "parameters": {
+        "required_documents": ["discharge_summary"],
+        "applies_to_claim_types": ["inpatient"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "HK-SLA-01",
+      "description": "All claims must be processed within 20 business days in Hong Kong",
+      "rule_type": "sla_check",
+      "parameters": {
+        "sla_business_days": 20,
+        "sla_claim_types": ["outpatient", "inpatient", "dental", "specialist", "maternity", "emergency", "mental_health"]
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "HK-WAIT-01",
+      "description": "General waiting period is 60 days; pre-existing conditions have a 180-day waiting period in Hong Kong",
+      "rule_type": "waiting_period",
+      "parameters": {
+        "waiting_days_general": 60,
+        "waiting_days_preexisting": 180
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "HK-MASK-01",
+      "description": "HKID must be masked — show first letter and last digit only",
+      "rule_type": "data_masking",
+      "parameters": {
+        "field": "national_id",
+        "mask_strategy": "first_char_last_digit"
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "HK-COV-01",
+      "description": "Mental health must be covered at the same level as physical health in Hong Kong",
+      "rule_type": "coverage_mandate",
+      "parameters": {
+        "mandate_type": "mental_health_parity",
+        "condition": "claim_type == 'mental_health'"
+      },
+      "effective_date": "2023-01-01",
+      "expiry_date": null
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "country": "singapore",
+  "_note": "SKELETON CONFIG — Demonstrates zero-code country addition. Engine will load this automatically.",
+  "rules": [
+    {
+      "rule_id": "SG-DOC-01",
+      "description": "Medical receipt and medisave claim form required for all claims in Singapore",
+      "rule_type": "document_requirement",
+      "parameters": {
+        "required_documents": ["medical_receipt", "medisave_claim_form"],
+        "applies_to_claim_types": ["outpatient", "inpatient", "dental", "specialist", "maternity"]
+      },
+      "effective_date": "2024-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "SG-SLA-01",
+      "description": "All claims must be processed within 14 business days in Singapore",
+      "rule_type": "sla_check",
+      "parameters": {
+        "sla_business_days": 14,
+        "sla_claim_types": ["outpatient", "inpatient", "dental", "specialist", "maternity", "emergency"]
+      },
+      "effective_date": "2024-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "SG-WAIT-01",
+      "description": "General waiting period is 90 days; pre-existing conditions have a 24-month waiting period in Singapore",
+      "rule_type": "waiting_period",
+      "parameters": {
+        "waiting_days_general": 90,
+        "waiting_days_preexisting": 730
+      },
+      "effective_date": "2024-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "SG-MASK-01",
+      "description": "NRIC/FIN must be masked — show last 4 characters only (e.g. ***567A)",
+      "rule_type": "data_masking",
+      "parameters": {
+        "field": "national_id",
+        "mask_strategy": "last_4"
+      },
+      "effective_date": "2024-01-01",
+      "expiry_date": null
+    },
+    {
+      "rule_id": "SG-COV-01",
+      "description": "Psychiatric and mental health treatments must be covered as per MediShield Life mandates in Singapore",
+      "rule_type": "coverage_mandate",
+      "parameters": {
+        "mandate_type": "mental_health_parity",
+        "condition": "claim_type == 'mental_health'"
+      },
+      "effective_date": "2024-01-01",
+      "expiry_date": null
+    }
+  ]
+}
