@@ -1,0 +1,13 @@
+# Next.js and React build outputs
+.next/
+out/
+build/
+
+# Dependency directories
+node_modules/
+
+# Local env files
+.env*.local
+
+# System files
+.DS_Store
