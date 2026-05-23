@@ -16,6 +16,8 @@
 | **09**    | [**Claims Analytics Dashboard**](#9-claims-analytics-dashboard) <br> High-fidelity charts visualizer for 5,000 log-normal claims. | Next.js, TypeScript, Recharts        | [Live Demo](https://papaya-ins-09.vercel.app/) | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_09) | ✅ Completed |
 | **10**    | [**Fraud Detection Engine**](#10-fraud-detection-scoring-engine) <br> Multi-pass fraud analyzer executing 8 mathematical rules.   | Node.js, TypeScript, Jest            | _N/A (Engine/Library)_                         | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_10) | ✅ Completed |
 | **12**    | [**Regulatory Rule Engine**](#12-multi-country-regulatory-rule-engine) <br> Decoupled multi-country rules engine parsing JSON configs. | Node.js, TypeScript, Jest            | _N/A (Engine/Library)_                         | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_12) | ✅ Completed |
+| **13**    | [**Partner Integration SDK**](#13-partner-integration-sdk) <br> Robust partner SDK for claim submission and document uploading. | Node.js, TypeScript, Jest            | _N/A (SDK/Library)_                            | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_13) | ✅ Completed |
+| **15**    | [**Multi-Tenant Config**](#15-multi-tenant-configuration-platform) <br> Zero-code insurer onboarding admin UI and claim rules runtime. | Next.js, TypeScript, CSS Variables | [Live Demo](https://papaya-ins-15.vercel.app/) | [Source Folder](https://github.com/quandeptrai1811/papaya_ins/tree/main/AI_Engineering_Challenges/AI_Challenge_15) | ✅ Completed |
 
 ---
 
@@ -207,11 +209,50 @@
 
 ---
 
+### 13. Partner Integration SDK
+
+- **Challenge File:** [AI_Challenge_13.md](./AI_Challenge_13/AI_Challenge_13.md)
+- **Requirements:**
+    - Design and build a JavaScript/TypeScript SDK for submitting claims, uploading documents, and tracking claim status.
+    - Build a mock HTTP API server with endpoints for JWT auth, claims CRUD, and document upload.
+    - Mock server must validate authentication, validate request bodies, simulate delay (200-500ms), and simulate transient failures (10% 503).
+    - SDK must feature client-side validation, auto token refresh, auto retry with exponential backoff on 503s, typed errors, and upload progress tracking.
+    - Write a README, examples, and at least 20 unit tests.
+- **Solution Implementation:**
+    - Developed a TS SDK implementing an Axios client wrapper.
+    - Programmed interceptors to seamlessly handle `401 Unauthorized` token refreshing, retry execution, and exponential backoff retry cycles for transient failures.
+    - Implemented a mock Express server mapping JWT issuing, in-memory DBs, and file uploads via Multer.
+    - Covered SDK logic with **20 unit tests** using Jest.
+    - Provided fully typed codebases, detailed error schemas (`ValidationError`, `AuthError`, `NetworkError`, `ApiError`), and three integration example scripts.
+- **Code Path:** [AI_Challenge_13 Folder](./AI_Challenge_13)
+
+---
+
+### 15. Multi-Tenant Configuration Platform
+
+- **Challenge File:** [AI_Challenge_15.md](./AI_Challenge_15/AI_Challenge_15.md)
+- **Requirements:**
+    - Build a tenant configuration system with an admin UI and a runtime engine.
+    - Branding, Claim Types (enabled types, required/optional documents), Approval Rules (auto-approval threshold, tiers), Notifications (events, channels, custom templates), SLA, and Custom Fields configuration.
+    - Form validation, Preview mode/Sandbox, Config diff comparison, and Config history versioning with rollbacks.
+    - Demonstrate 3 seeded tenants producing different claim processing behaviors.
+    - Enable onboarding a 4th tenant dynamically via the UI without code changes.
+- **Solution Implementation:**
+    - Developed a Next.js & TypeScript configuration workbench featuring a premium dark-themed glassmorphic user interface.
+    - Implemented a complete CRUD admin UI supporting color pickers, dynamic custom fields configuration, and safety-guarded configuration deletion/cleanup.
+    - Created an interactive Claims Sandbox simulator to live-test claim payloads with automated business-day SLA math, document checklists, approval tier routing, and notifications template rendering.
+    - Programmed a side-by-side comparison matrix isolating structural configuration differences.
+    - Implemented a chronological version control timeline storing snapshots in local storage, detailing consecutive updates, and providing one-click rollbacks.
+- **Production URL:** [https://papaya-ins-15.vercel.app/](https://papaya-ins-15.vercel.app/)
+- **Code Path:** [AI_Challenge_15 Folder](./AI_Challenge_15)
+
+---
+
 ## 🚀 Running Any Project Locally
 
 All web/Next.js projects follow the standard Next.js lifecycle. Backend engine projects run via Node.js/TypeScript.
 
-### 🌐 Next.js Web Projects (03, 04, 05, 07, 09)
+### 🌐 Next.js Web Projects (03, 04, 05, 07, 09, 15)
 
 1. Navigate to the project directory:
     ```bash
@@ -239,7 +280,7 @@ All web/Next.js projects follow the standard Next.js lifecycle. Backend engine p
     ```
 3. Check the `output/` folder for clean CSV files and metrics reports.
 
-### 💻 Node.js Engine & CLI Projects (06, 10, 12)
+### 💻 Node.js Engine & CLI Projects (06, 10, 12, 13)
 
 1. Navigate to the project directory:
     ```bash
